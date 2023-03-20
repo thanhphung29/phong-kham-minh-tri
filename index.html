@@ -1,5 +1,29 @@
 <html>
+<head>
+  <link rel="manifest" href="manifest.json">
+  <script>
+    isInstalled();
+    function isInstalled() {
+  // For iOS
+      console.log(window.userAgent)
+      if(window.navigator.standalone) {
+      console.log("iOS");
+      alert("iOS");
+      return true;
+      } 
 
+      // For Android
+      if(window.matchMedia('(display-mode: standalone)').matches) {
+      console.log("Android");
+      alert("iOS");
+      return true  
+      }
+
+      // If neither is true, it's not installed
+      return false
+    }
+  </script>
+</head>
 <body style="margin: 0;">
   <img src="./home.jpg" alt="" style="width: 100%;">
 </body>
