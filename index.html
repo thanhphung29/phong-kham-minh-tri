@@ -31,9 +31,7 @@ function updateLockButton() {
 }
 
 function getOppositeOrientation() {
-  return screen
-    .orientation
-    .startsWith("portrait") ? "landscape" : "portrait";
+  return screen.orientation.type.startsWith("portrait") ? "landscape" : "portrait";
 }
 
 async function rotate(lockButton) {
