@@ -36,7 +36,7 @@ function getOppositeOrientation() {
 
 async function rotate(lockButton) {
   if (!document.fullscreenElement) {
-//     await document.documentElement.requestFullscreen();
+    await document.documentElement.requestFullscreen();
   }
   const newOrientation = getOppositeOrientation();
   console.log(newOrientation);
@@ -46,7 +46,7 @@ async function rotate(lockButton) {
   updateLockButton(lockButton);
 }
 
-// screen.orientation.addEventListener("change", updateLockButton);
+screen.orientation.addEventListener("change", updateLockButton);
 
 window.addEventListener("load", updateLockButton);
 </script>
