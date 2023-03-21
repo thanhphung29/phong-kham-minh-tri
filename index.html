@@ -39,7 +39,9 @@ async function rotate(lockButton) {
     await document.documentElement.requestFullscreen();
   }
   const newOrientation = getOppositeOrientation();
-  await screen.orientation.lock(newOrientation);
+  try {
+    await screen.orientation.lock(newOrientation);
+  } catch {}
   updateLockButton(lockButton);
 }
 
